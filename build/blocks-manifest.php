@@ -25,6 +25,10 @@ return array(
 			'align' => array(
 				'type' => 'string',
 				'default' => 'center'
+			),
+			'backgroundColor' => array(
+				'type' => 'string',
+				'default' => '#fff9c4'
 			)
 		),
 		'textdomain' => 'noteblock',

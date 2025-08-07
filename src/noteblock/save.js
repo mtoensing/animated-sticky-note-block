@@ -4,17 +4,16 @@
  */
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
-export default function save({ attributes }) {
-    const { content, textAlign } = attributes;
+export default function save( { attributes } ) {
+    const { content, textAlign, backgroundColor = '#fff9c4' } = attributes;
 
-    // Get default block props, including the wrapper class
-    const blockProps = useBlockProps.save({
-        style: { textAlign },
-    });
+    const blockProps = useBlockProps.save( {
+        style: { textAlign, backgroundColor },
+    } );
 
     return (
         <div {...blockProps}>
-            <RichText.Content tagName="p" value={content} />
+            <RichText.Content tagName="p" value={ content } />
         </div>
     );
 }

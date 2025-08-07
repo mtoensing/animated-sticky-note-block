@@ -22,6 +22,10 @@
     "align": {
       "type": "string",
       "default": "center"
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": "#fff9c4"
     }
   },
   "textdomain": "noteblock",
