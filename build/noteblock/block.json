@@ -5,7 +5,8 @@
   "category": "widgets",
   "description": "Leave sticky notes directly on your website using a simple Gutenberg block.",
   "supports": {
-    "html": false
+    "html": false,
+    "align": true
   },
   "attributes": {
     "content": {
@@ -14,7 +15,12 @@
       "selector": "p"
     },
     "textAlign": {
-      "type": "string"
+      "type": "string",
+      "default": "center"
+    },
+    "align": {
+      "type": "string",
+      "default": "center"
     }
   },
   "textdomain": "noteblock",

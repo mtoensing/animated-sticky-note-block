@@ -8,7 +8,8 @@ return array(
 		'category' => 'widgets',
 		'description' => 'Leave sticky notes directly on your website using a simple Gutenberg block.',
 		'supports' => array(
-			'html' => false
+			'html' => false,
+			'align' => true
 		),
 		'attributes' => array(
 			'content' => array(
@@ -17,7 +18,12 @@ return array(
 				'selector' => 'p'
 			),
 			'textAlign' => array(
-				'type' => 'string'
+				'type' => 'string',
+				'default' => 'center'
+			),
+			'align' => array(
+				'type' => 'string',
+				'default' => 'center'
 			)
 		),
 		'textdomain' => 'noteblock',
