@@ -3,30 +3,29 @@
  * Allows basic formatting (bold, italic, link) and text alignment.
  */
 import { __ } from '@wordpress/i18n';
-import { RichText, BlockControls, AlignmentToolbar } from '@wordpress/block-editor';
+import { RichText, BlockControls, AlignmentToolbar, useBlockProps } from '@wordpress/block-editor';
 
-export default function Edit({ attributes, setAttributes, className }) {
+export default function Edit({ attributes, setAttributes }) {
     const { content = '', textAlign } = attributes;
+
+    // Apply block props with inline text alignment
+    const blockProps = useBlockProps({ style: { textAlign } });
 
     return (
         <>
-            {/* Alignment controls */}
             <BlockControls>
                 <AlignmentToolbar
                     value={textAlign}
                     onChange={(newAlign) => setAttributes({ textAlign: newAlign })}
                 />
             </BlockControls>
-
-            {/* Note container with sticky-note look */}
-            <div className={className} style={{ textAlign }}>
+            <div {...blockProps}>
                 <RichText
                     tagName="p"
                     value={content}
                     onChange={(newContent) => setAttributes({ content: newContent })}
-                    placeholder={__('Write your note…', 'noteblock')}
                     allowedFormats={['core/bold', 'core/italic', 'core/link']}
-                    // Disallow tables and images by not including their format types
+                    placeholder="Write your note…"
                 />
             </div>
         </>
