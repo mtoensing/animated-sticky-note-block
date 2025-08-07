@@ -2,24 +2,27 @@
 // This file is generated. Do not modify it manually.
 return array(
 	'noteblock' => array(
-		'$schema' => 'https://schemas.wp.org/trunk/block.json',
-		'apiVersion' => 3,
+		'apiVersion' => 2,
 		'name' => 'create-block/noteblock',
-		'version' => '0.1.0',
 		'title' => 'NoteBlock',
 		'category' => 'widgets',
-		'icon' => 'smiley',
-		'description' => 'Example block scaffolded with Create Block tool.',
-		'example' => array(
-			
-		),
+		'description' => 'Leave sticky notes directly on your website using a simple Gutenberg block.',
 		'supports' => array(
 			'html' => false
+		),
+		'attributes' => array(
+			'content' => array(
+				'type' => 'string',
+				'source' => 'html',
+				'selector' => 'p'
+			),
+			'textAlign' => array(
+				'type' => 'string'
+			)
 		),
 		'textdomain' => 'noteblock',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'style' => 'file:./style-index.css'
 	)
 );
