@@ -10,7 +10,7 @@ import { PanelBody, ColorPalette } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 
 export default function Edit({ attributes, setAttributes }) {
-  const { content = '', textAlign, backgroundColor } = attributes;
+  const { content = '', textAlign, backgroundColor, textColor } = attributes;
   const DEFAULT_COLOR = '#fff9c4';
 
   // Get editor settings (palette etc.) in a version-safe way
@@ -21,7 +21,7 @@ export default function Edit({ attributes, setAttributes }) {
   }, [] );
 
   const blockProps = useBlockProps({
-    style: { textAlign, backgroundColor: backgroundColor || DEFAULT_COLOR },
+    style: { textAlign, backgroundColor: backgroundColor || DEFAULT_COLOR, color: textColor },
   });
 
   return (
@@ -38,6 +38,18 @@ export default function Edit({ attributes, setAttributes }) {
               onChange={ (color) => setAttributes({ backgroundColor: color || undefined }) }
               clearable
               disableCustomColors={ false } // allow custom picker too
+            />
+          </div>
+          <div className="components-base-control">
+            <span className="components-base-control__label">
+              { __('Text', 'noteblock') }
+            </span>
+            <ColorPalette
+              colors={ themeColors }
+              value={ textColor }
+              onChange={(color) => setAttributes({ textColor: color || undefined })}
+              clearable
+              disableCustomColors={ false }
             />
           </div>
         </PanelBody>
