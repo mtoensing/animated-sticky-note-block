@@ -6,6 +6,7 @@ return array(
 		'name' => 'create-block/noteblock',
 		'title' => 'NoteBlock',
 		'category' => 'widgets',
+		'icon' => 'sticky',
 		'description' => 'Leave sticky notes directly on your website using a simple Gutenberg block.',
 		'supports' => array(
 			'html' => false,

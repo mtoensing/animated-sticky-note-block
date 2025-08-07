@@ -1,7 +1,7 @@
 {
 	"name": "noteblock",
 	"version": "0.1.0",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "Leave sticky notes directly on your website using a simple Gutenberg block. ",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
