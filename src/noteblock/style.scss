@@ -6,6 +6,8 @@
 	word-break: break-word;
 	transform-origin: top center;
 	transition: transform 0.6s ease; // <-- added for smooth rotation
+	will-change: transform;
+	transform: rotate(-1.5deg);
 	position: relative;
 	background: linear-gradient(
 		175deg,
@@ -13,19 +15,46 @@
 		rgb(253, 242, 160) 100%
 	); // <-- default pale color
 	border: 1px solid rgba(0, 0, 0, 0.1); // <-- makes border a bit darker.
-	animation: note-swing 0.8s ease forwards;
+	animation: note-swing 1.2s cubic-bezier(.22,.61,.36,1) forwards;
 }
 
 @keyframes note-swing {
-	0% {
-		transform: rotate(-1.5deg);
-	}
-	50% {
-		transform: rotate(1.5deg);
-	}
-	100% {
-		transform: rotate(-1.5deg);
-	}
+  0% {
+    transform: rotate(0deg);
+    /* Start from upright */
+    easing: cubic-bezier(0.42,0,0.58,1);
+  }
+  18% {
+    transform: rotate(3deg);
+    /* Swing forward */
+    easing: cubic-bezier(0.42,0,0.58,1);
+  }
+  38% {
+    transform: rotate(-2.5deg);
+    /* Swing back past center */
+    easing: cubic-bezier(0.42,0,0.58,1);
+  }
+  58% {
+    transform: rotate(1deg);
+    /* Smaller swing forward */
+    easing: cubic-bezier(0.42,0,0.58,1);
+  }
+  78% {
+    transform: rotate(-1.5deg);
+    /* Settle back */
+    easing: cubic-bezier(0.42,0,0.58,1);
+  }
+  100% {
+    transform: rotate(-1.5deg);
+    /* Resting position */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wp-block-create-block-noteblock {
+    animation: none !important;
+    transform: rotate(-1.5deg) !important;
+  }
 }
 
 .wp-block-create-block-noteblock a {
@@ -52,12 +81,7 @@
 	
 }
 
-/* Editor styling */
-.editor-styles-wrapper .wp-block-create-block-noteblock {
-	padding: 1rem;
-	border: 1px dashed;
-	border-radius: 4px;
-}
+
 
 /* Default note width */
 .wp-block-create-block-noteblock {
