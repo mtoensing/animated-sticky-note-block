@@ -26,7 +26,7 @@
         "backgroundColor": {
             "type": "string",
             "default": "#fff9c4"   
-        }
+        },"textColor": { "type": "string" }
 	},
 		"textdomain": "noteblock",
 		"editorScript": "file:./index.js",

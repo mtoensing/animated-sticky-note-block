@@ -8,7 +8,7 @@
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"create-block/noteblock","title":"NoteBlock","category":"widgets","icon":"sticky","description":"Leave sticky notes directly on your website using a simple Gutenberg block.","supports":{"html":false,"align":true},"attributes":{"content":{"type":"string","source":"html","selector":"p"},"textAlign":{"type":"string","default":"center"},"align":{"type":"string","default":"center"},"backgroundColor":{"type":"string","default":"#fff9c4"}},"textdomain":"noteblock","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"apiVersion":2,"name":"create-block/noteblock","title":"NoteBlock","category":"widgets","icon":"sticky","description":"Leave sticky notes directly on your website using a simple Gutenberg block.","supports":{"html":false,"align":true},"attributes":{"content":{"type":"string","source":"html","selector":"p"},"textAlign":{"type":"string","default":"center"},"align":{"type":"string","default":"center"},"backgroundColor":{"type":"string","default":"#fff9c4"},"textColor":{"type":"string"}},"textdomain":"noteblock","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ }),
 
@@ -190,19 +190,24 @@ function save({
   const {
     content,
     textAlign,
-    backgroundColor = '#fff9c4'
+    backgroundColor = '#fff9c4',
+    textColor
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
     style: {
       textAlign,
-      backgroundColor
+      backgroundColor,
+      color: textColor // apply text color on wrapper
     }
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     ...blockProps,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
       tagName: "p",
-      value: content
+      value: content,
+      style: {
+        color: textColor
+      } // reinforce it on the paragraph
     })
   });
 }

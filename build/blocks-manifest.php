@@ -29,6 +29,9 @@ return array(
 			'backgroundColor' => array(
 				'type' => 'string',
 				'default' => '#fff9c4'
+			),
+			'textColor' => array(
+				'type' => 'string'
 			)
 		),
 		'textdomain' => 'noteblock',
