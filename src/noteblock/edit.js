@@ -27,8 +27,6 @@ export default function Edit({ attributes, setAttributes }) {
       </BlockControls>
 
       <div { ...blockProps }>
-        {/* decorative pin */}
-        <span className="noteblock-pin" aria-hidden="true"></span>
         <RichText
           tagName="p"
           value={ content }
