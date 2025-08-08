@@ -11,7 +11,13 @@ Leave sticky notes directly on your website using a simple Gutenberg block.
 
 == Description ==
 
-Leave sticky notes directly on your website using a simple Gutenberg block.         
+Leave sticky notes directly on your website using a simple Gutenberg block.  
+- Lightweight and efficient
+- No JavaScript on the front end
+- Fast performance
+- Zero impact on page load times
+
+
 
 == Installation ==
 
