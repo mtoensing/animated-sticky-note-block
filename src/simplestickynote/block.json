@@ -32,6 +32,10 @@
         "align": {
             "type": "string",
             "default": "center"
+        },
+        "width": {
+            "type": "string",
+            "default": "300px"
         }
     },
     "textdomain": "simplestickynote",

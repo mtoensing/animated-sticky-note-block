@@ -4,14 +4,17 @@ import {
 	RichText,
 	BlockControls,
 	AlignmentToolbar,
+	InspectorControls,
 } from '@wordpress/block-editor';
+import { PanelBody, RangeControl } from '@wordpress/components';
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { content = '', textAlign } = attributes;
+	const { content = '', textAlign, width = '300px' } = attributes;
 
 	const blockProps = useBlockProps( {
 		style: {
 			textAlign,
+			...( width ? { width } : {} ),
 		},
 	} );
 
@@ -25,6 +28,23 @@ export default function Edit( { attributes, setAttributes } ) {
 					}
 				/>
 			</BlockControls>
+			<InspectorControls>
+				<PanelBody
+					title={ __( 'Size', 'simplestickynote' ) }
+					initialOpen={ true }
+				>
+					<RangeControl
+						label={ __( 'Width (px)', 'simplestickynote' ) }
+						value={ parseInt( width, 10 ) || 300 }
+						onChange={ ( newVal ) =>
+							setAttributes( { width: `${ newVal }px` } )
+						}
+						min={ 100 }
+						max={ 1400 }
+						step={ 10 }
+					/>
+				</PanelBody>
+			</InspectorControls>
 
 			<div { ...blockProps }>
 				<RichText

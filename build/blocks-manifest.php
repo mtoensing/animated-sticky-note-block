@@ -35,6 +35,10 @@ return array(
 			'align' => array(
 				'type' => 'string',
 				'default' => 'center'
+			),
+			'width' => array(
+				'type' => 'string',
+				'default' => '300px'
 			)
 		),
 		'textdomain' => 'simplestickynote',
