@@ -4,24 +4,39 @@ import {
   BlockControls,
   AlignmentToolbar,
   InspectorControls,
+  FontSizePicker,
   useBlockProps,
 } from '@wordpress/block-editor';
 import { PanelBody, ColorPalette } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 
 export default function Edit({ attributes, setAttributes }) {
-  const { content = '', textAlign, backgroundColor, textColor } = attributes;
+  const {
+    content = '',
+    textAlign,
+    backgroundColor,
+    textColor,
+    fontSize,
+  } = attributes;
   const DEFAULT_COLOR = '#fff9c4';
 
-  // Get editor settings (palette etc.) in a version-safe way
-  const themeColors = useSelect( ( select ) => {
-    const settings = select('core/block-editor')?.getSettings?.() || {};
-    // Most WP versions expose palette as `settings.colors`
-    return settings.colors || [];
-  }, [] );
+  // Get theme colors and font sizes
+  const { colors: themeColors = [], fontSizes: themeFontSizes = [] } =
+    useSelect((select) => {
+      const settings = select('core/block-editor')?.getSettings?.() || {};
+      return {
+        colors: settings.colors || [],
+        fontSizes: settings.fontSizes || [],
+      };
+    }, []);
 
   const blockProps = useBlockProps({
-    style: { textAlign, backgroundColor: backgroundColor || DEFAULT_COLOR, color: textColor },
+    style: {
+      textAlign,
+      backgroundColor: backgroundColor || DEFAULT_COLOR,
+      color: textColor,
+      fontSize, // apply the chosen size
+    },
   });
 
   return (
@@ -53,20 +68,26 @@ export default function Edit({ attributes, setAttributes }) {
             />
           </div>
         </PanelBody>
+        <PanelBody title={ __('Typography', 'noteblock') } initialOpen={ false }>
+          <FontSizePicker
+            fontSizes={ themeFontSizes }
+            value={ fontSize }
+            onChange={(size) => setAttributes({ fontSize: size })}
+            fallbackFontSize={ 16 }
+            withSlider
+          />
+        </PanelBody>
       </InspectorControls>
 
       <BlockControls>
-        <AlignmentToolbar
-          value={ textAlign }
-          onChange={ (newAlign) => setAttributes({ textAlign: newAlign }) }
-        />
+        {/* existing alignment toolbar */}
       </BlockControls>
 
       <div {...blockProps}>
         <RichText
           tagName="p"
           value={ content }
-          onChange={ (newContent) => setAttributes({ content: newContent }) }
+          onChange={(newContent) => setAttributes({ content: newContent })}
           allowedFormats={ ['core/bold', 'core/italic', 'core/link'] }
           placeholder={ __('Write your note…', 'noteblock') }
         />

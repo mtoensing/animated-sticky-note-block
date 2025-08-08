@@ -29,6 +29,10 @@
     },
     "textColor": {
       "type": "string"
+    },
+    "fontSize": {
+      "type": "number",
+      "default": 50
     }
   },
   "textdomain": "noteblock",

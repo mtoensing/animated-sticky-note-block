@@ -32,6 +32,10 @@ return array(
 			),
 			'textColor' => array(
 				'type' => 'string'
+			),
+			'fontSize' => array(
+				'type' => 'number',
+				'default' => 50
 			)
 		),
 		'textdomain' => 'noteblock',
