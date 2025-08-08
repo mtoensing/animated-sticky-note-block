@@ -22,5 +22,5 @@ jobs:
                   npm ci || npm i
                   npm install @wordpress/scripts --save-dev --save-exact
                   npx wp-scripts lint-js
-                  npx wp-scripts lint-css
+                  npx wp-scripts lint-style
                   npx wp-scripts build
