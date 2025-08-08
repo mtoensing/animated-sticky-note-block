@@ -17,6 +17,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
+            - name: NPM config (quieter logs)
+              run: |
+                  npm config set fund false
+                  npm config set audit false
+                  npm config set loglevel warn
             - name: Build
               run: |
                   npm ci || npm i
