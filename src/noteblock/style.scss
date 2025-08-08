@@ -1,15 +1,19 @@
 .wp-block-create-block-noteblock {
 	padding: 1rem;
 	border-radius: 4px;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+	box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.4);
 	font-family: inherit;
 	word-break: break-word;
 	transform-origin: top center;
 	transition: transform 0.6s ease; // <-- added for smooth rotation
 	position: relative;
-	background-color: #FFF9C4; // <-- default pale color
+	background: linear-gradient(
+		175deg,
+		rgb(255, 249, 196) 0%,
+		rgb(253, 242, 160) 100%
+	); // <-- default pale color
 	border: 1px solid rgba(0, 0, 0, 0.1); // <-- makes border a bit darker.
-	animation: note-swing 1.2s ease forwards;
+	animation: note-swing 0.8s ease forwards;
 }
 
 @keyframes note-swing {
