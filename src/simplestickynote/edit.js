@@ -32,7 +32,7 @@ export default function Edit({ attributes, setAttributes }) {
           value={ content }
           onChange={ (newContent) => setAttributes({ content: newContent }) }
           allowedFormats={[ 'core/bold', 'core/italic', 'core/link' ]}
-          placeholder={ __('Write your note…', 'noteblock') }
+          placeholder={ __('Write your note…', 'simplestickynote') }
         />
       </div>
     </>

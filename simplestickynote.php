@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       NoteBlock
+ * Plugin Name:       Simple Sticky Note
  * Description:       Leave sticky notes directly on your website using a simple Gutenberg block.
  * Version:           0.1.0
  * Requires at least: 6.7
@@ -9,7 +9,7 @@
  * Author URI:    	  https://toensing.com
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       noteblock
+ * Text Domain:       simplestickynote
  *
  * @package CreateBlock
  */

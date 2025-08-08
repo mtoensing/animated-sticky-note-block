@@ -1,8 +1,8 @@
 {
-	"name": "noteblock",
+	"name": "simplestickynote",
 	"version": "0.1.0",
 	"description": "Leave sticky notes directly on your website using a simple Gutenberg block. ",
-	"author": "The WordPress Contributors",
+	"author": "MarcDK",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {

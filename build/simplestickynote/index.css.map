@@ -1,0 +1,1 @@
+{"version":3,"file":"simplestickynote/index.css","mappings":";;;AAAA,oB","sources":["webpack://simplestickynote/./src/simplestickynote/editor.scss"],"sourcesContent":["/* Editor styling */\n.editor-styles-wrapper .wp-block-create-block-simplestickynote {\n\n}\n\n"],"names":[],"sourceRoot":""}

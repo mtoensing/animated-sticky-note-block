@@ -1,5 +1,4 @@
-.wp-block-create-block-noteblock {
-	padding: 1rem;
+.wp-block-create-block-simplestickynote {
 	border-radius: 4px;
 	box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.4);
 	font-family: inherit;
@@ -9,60 +8,36 @@
 	will-change: transform;
 	transform: rotate(-1.5deg);
 	position: relative;
-	background: linear-gradient(
-		175deg,
-		rgb(255, 249, 196) 0%,
-		rgb(253, 242, 160) 100%
-	); // <-- default pale color
+	color: #333;
+	background: rgb(255, 249, 196);// <-- default pale color
 	border: 1px solid rgba(0, 0, 0, 0.1); // <-- makes border a bit darker.
 	animation: note-swing 1.2s cubic-bezier(.22,.61,.36,1) forwards;
 }
 
 @keyframes note-swing {
-  0% {
-    transform: rotate(0deg);
-    /* Start from upright */
-    easing: cubic-bezier(0.42,0,0.58,1);
-  }
-  18% {
-    transform: rotate(3deg);
-    /* Swing forward */
-    easing: cubic-bezier(0.42,0,0.58,1);
-  }
-  38% {
-    transform: rotate(-2.5deg);
-    /* Swing back past center */
-    easing: cubic-bezier(0.42,0,0.58,1);
-  }
-  58% {
-    transform: rotate(1deg);
-    /* Smaller swing forward */
-    easing: cubic-bezier(0.42,0,0.58,1);
-  }
-  78% {
-    transform: rotate(-1.5deg);
-    /* Settle back */
-    easing: cubic-bezier(0.42,0,0.58,1);
-  }
-  100% {
-    transform: rotate(-1.5deg);
-    /* Resting position */
-  }
+	0%   { transform: rotate(0deg); }
+	12%  { transform: rotate(6deg); }    /* swing 1 right */
+	24%  { transform: rotate(-5deg); }   /* swing 2 left  */
+	36%  { transform: rotate(4deg); }    /* swing 3 right */
+	52%  { transform: rotate(-3deg); }   /* swing 4 left  */
+	70%  { transform: rotate(2deg); }    /* swing 5 right */
+	88%  { transform: rotate(-1.5deg); } /* swing 6 left  */
+	100% { transform: rotate(-1.2deg); } /* natural rest  */
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .wp-block-create-block-noteblock {
+  .wp-block-create-block-simplestickynote {
     animation: none !important;
     transform: rotate(-1.5deg) !important;
   }
 }
 
-.wp-block-create-block-noteblock a {
+.wp-block-create-block-simplestickynote a {
   color: inherit;
 }
 
 /* Adds the pin */
-.wp-block-create-block-noteblock::before {
+.wp-block-create-block-simplestickynote::before {
 	content: "";
 	position: absolute;
 	border-radius: 50%;
@@ -70,12 +45,12 @@
 	width: 16px;
 	height: 16px;
 	background: #333 radial-gradient(circle at center, rgba(255,255,255,0.6) 30%, transparent 31%);
-	top: 5px;
+	top: -7px;
 	left: 50%;
 	transform: translateX(-50%);
 }
 
-.wp-block-create-block-noteblock:hover {
+.wp-block-create-block-simplestickynote:hover {
 	transform: rotate(-1.5deg);
 	animation: none;
 	
@@ -84,7 +59,7 @@
 
 
 /* Default note width */
-.wp-block-create-block-noteblock {
+.wp-block-create-block-simplestickynote {
   max-width: 22rem;   // or whatever “narrow” means for you
   width: 100%;
   margin-left: 0;     // left aligned by default
@@ -92,7 +67,7 @@
 }
 
 /* If the user chooses wide or full, remove the max-width */
-.wp-block-create-block-noteblock.alignwide,
-.wp-block-create-block-noteblock.alignfull {
+.wp-block-create-block-simplestickynote.alignwide,
+.wp-block-create-block-simplestickynote.alignfull {
   max-width: none;
 }

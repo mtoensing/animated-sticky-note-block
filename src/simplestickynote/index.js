@@ -1,5 +1,5 @@
 /**
- * Block registration for NoteBlock.
+ * Block registration for simplestickynote.
  */
 import { registerBlockType } from '@wordpress/blocks';
 import metadata from './block.json';

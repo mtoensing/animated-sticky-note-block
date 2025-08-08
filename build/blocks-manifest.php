@@ -1,10 +1,10 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
-	'noteblock' => array(
+	'simplestickynote' => array(
 		'apiVersion' => 2,
-		'name' => 'create-block/noteblock',
-		'title' => 'NoteBlock',
+		'name' => 'create-block/simplestickynote',
+		'title' => 'Simple Sticky Note',
 		'category' => 'widgets',
 		'icon' => 'sticky',
 		'description' => 'Leave sticky notes directly on your website using a simple Gutenberg block.',
@@ -37,7 +37,7 @@ return array(
 				'default' => 'center'
 			)
 		),
-		'textdomain' => 'noteblock',
+		'textdomain' => 'simplestickynote',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css'
