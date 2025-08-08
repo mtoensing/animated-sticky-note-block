@@ -17,6 +17,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
+            - name: Setup Node.js
+              uses: actions/setup-node@latest
+              with:
+                node-version: 20
+                cache: 'npm'
             - name: NPM config (quieter logs)
               run: |
                   npm config set fund false
@@ -25,7 +30,6 @@ jobs:
             - name: Build
               run: |
                   npm ci || npm i
-                  npm install @wordpress/scripts --save-dev --save-exact
                   npx wp-scripts lint-js
                   npx wp-scripts lint-style
                   npx wp-scripts build
