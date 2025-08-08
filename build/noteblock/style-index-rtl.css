@@ -16,6 +16,10 @@
   position: relative;
 }
 
+.wp-block-create-block-noteblock a {
+  color: inherit;
+}
+
 .wp-block-create-block-noteblock::before {
   content: "";
   position: absolute;
