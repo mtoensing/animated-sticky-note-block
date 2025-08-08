@@ -18,7 +18,6 @@ export default function Edit( { attributes, setAttributes } ) {
 		},
 	} );
 
-
 	return (
 		<>
 			<BlockControls>
