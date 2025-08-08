@@ -9,7 +9,7 @@ import {
 import { PanelBody, RangeControl } from '@wordpress/components';
 
 export default function Edit( { attributes, setAttributes } ) {
-	const { content = '', textAlign, width = '300px' } = attributes;
+	const { content = '', textAlign, width } = attributes;
 
 	const blockProps = useBlockProps( {
 		style: {
@@ -17,6 +17,7 @@ export default function Edit( { attributes, setAttributes } ) {
 			...( width ? { width } : {} ),
 		},
 	} );
+
 
 	return (
 		<>
