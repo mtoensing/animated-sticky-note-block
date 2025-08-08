@@ -32,24 +32,34 @@ export default function save({ attributes }) {
   const {
     content,
     textAlign,
-    backgroundColor = '#fff9c4',
-    textColor,
-    fontSize,
+    style = {},
+    backgroundColor = '#fff9c4', // legacy fallback
+    textColor: legacyTextColor,
+    fontSize: legacyFontSize,
   } = attributes;
 
-  // Compute dynamic colours
-  const borderColour = darken(backgroundColor, 10);  // darker border
-  const foldColour = lighten(backgroundColor, 30);   // lighter fold colour
+  const DEFAULT_COLOR = '#fff9c4';
+  const bgFromSupports = style?.color?.background; // may be hex or CSS var
+  const textFromSupports = style?.color?.text;
+  const fontSizeFromSupports = style?.typography?.fontSize;
+
+  const background = bgFromSupports || backgroundColor || DEFAULT_COLOR;
+  const textColor = textFromSupports || legacyTextColor;
+  const resolvedFontSize = fontSizeFromSupports || legacyFontSize;
+
+  const isHex = (c) => typeof c === 'string' && /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(c);
+  const borderColour = isHex(background) ? darken(background, 10) : 'rgba(0,0,0,0.2)';
+  const foldColour = isHex(background) ? lighten(background, 30) : background;
 
   // Build block props, including the user’s fontSize if set
   const blockProps = useBlockProps.save({
     style: {
       textAlign,
-      backgroundColor,
+      backgroundColor: background,
       color: textColor,
-      border: `1px solid ${borderColour}`,
-      fontSize: fontSize, // e.g. 56 -> “56px” at runtime
-      '--note-background-color': backgroundColor,
+      border: `1px solid ${ borderColour }`,
+      fontSize: resolvedFontSize,
+      '--note-background-color': background,
       '--note-dark-color': foldColour,
     },
   });
@@ -61,7 +71,7 @@ export default function save({ attributes }) {
         value={ content }
         style={{
           color: textColor,
-          fontSize: fontSize,
+          fontSize: resolvedFontSize,
         }}
       />
     </div>

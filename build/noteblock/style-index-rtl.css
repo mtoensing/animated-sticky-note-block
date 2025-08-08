@@ -1,1 +1,68 @@
-.wp-block-create-block-noteblock{border:1px solid;border-radius:4px;box-shadow:0 2px 6px rgba(0,0,0,.2);font-family:Lucida Handwriting,Segoe Script,Segoe Print,Brush Script MT,Comic Sans MS,cursive;padding:1rem;position:relative;transform:rotate(1.5deg);transform-origin:top center;transition:transform .6s ease;word-break:break-word}.wp-block-create-block-noteblock a{color:inherit}.wp-block-create-block-noteblock:before{background:#333 radial-gradient(circle at center,hsla(0,0%,100%,.6) 30%,transparent 31%);border:2px solid #333;border-radius:50%;content:"";height:16px;right:50%;position:absolute;top:5px;transform:translateX(50%);width:16px}.wp-block-create-block-noteblock:hover{transform:rotate(0deg)}.editor-styles-wrapper .wp-block-create-block-noteblock{border:1px dashed khaki;border-radius:4px;padding:1rem}.wp-block-create-block-noteblock{margin-right:0;margin-left:auto;max-width:22rem;width:100%}.wp-block-create-block-noteblock.alignfull,.wp-block-create-block-noteblock.alignwide{max-width:none}
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/noteblock/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/* Front‑end styling */
+.wp-block-create-block-noteblock {
+  padding: 1rem;
+  border: 1px solid;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  /* font-family: 
+   'Lucida Handwriting', 
+   'Segoe Script', 
+   'Segoe Print', 
+   'Brush Script MT', 
+   'Comic Sans MS', 
+   cursive; */
+  font-family: inherit;
+  word-break: break-word;
+  transform: rotate(1.5deg);
+  transform-origin: top center;
+  transition: transform 0.6s ease;
+  position: relative;
+  background-color: #FFF9C4;
+}
+
+.wp-block-create-block-noteblock a {
+  color: inherit;
+}
+
+/* Pin Styling */
+.wp-block-create-block-noteblock::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #333;
+  width: 16px;
+  height: 16px;
+  background: #333 radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 30%, transparent 31%);
+  top: 5px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.wp-block-create-block-noteblock:hover {
+  transform: rotate(0deg);
+}
+
+/* Editor styling */
+.editor-styles-wrapper .wp-block-create-block-noteblock {
+  padding: 1rem;
+  border: 1px dashed;
+  border-radius: 4px;
+}
+
+/* Default note width */
+.wp-block-create-block-noteblock {
+  max-width: 22rem;
+  width: 100%;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+/* If the user chooses wide or full, remove the max-width */
+.wp-block-create-block-noteblock.alignwide,
+.wp-block-create-block-noteblock.alignfull {
+  max-width: none;
+}

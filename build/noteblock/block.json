@@ -7,7 +7,17 @@
   "description": "Leave sticky notes directly on your website using a simple Gutenberg block.",
   "supports": {
     "html": false,
-    "align": true
+    "align": true,
+    "typography": {
+      "fontFamily": true,
+      "fontSize": true
+    },
+    "color": {
+      "text": true,
+      "background": true,
+      "gradients": true,
+      "link": true
+    }
   },
   "attributes": {
     "content": {
@@ -22,17 +32,6 @@
     "align": {
       "type": "string",
       "default": "center"
-    },
-    "backgroundColor": {
-      "type": "string",
-      "default": "#fff9c4"
-    },
-    "textColor": {
-      "type": "string"
-    },
-    "fontSize": {
-      "type": "number",
-      "default": 50
     }
   },
   "textdomain": "noteblock",
