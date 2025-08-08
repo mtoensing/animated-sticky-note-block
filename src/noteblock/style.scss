@@ -15,6 +15,33 @@
 	transform: rotate(-1.5deg);
 	transform-origin: top center;
 	transition: transform 0.6s ease; // <-- added for smooth rotation
+	position: relative;
+}
+
+.wp-block-create-block-noteblock::before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	border: 2px solid #4c0000;
+	width: 16px;
+	height: 16px;
+	background-color: #4c0000;
+	top: 1px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.wp-block-create-block-noteblock::after {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	border: 2px solid #4c0000;
+	width: 6px;
+	height: 6px;
+	background-color: rgba(255, 255, 255, 0.6);
+	top: 6px;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .wp-block-create-block-noteblock:hover {
