@@ -12,6 +12,13 @@
     'Comic Sans MS', 
     cursive;
 	word-break: break-all;
+	transform: rotate(-1.5deg);
+	transform-origin: top center;
+	transition: transform 0.6s ease; // <-- added for smooth rotation
+}
+
+.wp-block-create-block-noteblock:hover {
+	transform: rotate(0deg);
 }
 
 /* Editor styling */
