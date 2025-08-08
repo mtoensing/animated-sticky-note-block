@@ -180,10 +180,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 /**
  * Save component for NoteBlock.
- * Saves the note as HTML with preserved formatting and alignment.
  */
 
 
+// Darken a hex color by a percentage (no dependencies needed)
+
+function darken(hex, percent) {
+  // Strip the '#'
+  const num = parseInt(hex.replace('#', ''), 16);
+  let r = num >> 16 & 255;
+  let g = num >> 8 & 255;
+  let b = num & 255;
+
+  // Darken each channel
+  r = Math.max(0, Math.floor(r * (100 - percent) / 100));
+  g = Math.max(0, Math.floor(g * (100 - percent) / 100));
+  b = Math.max(0, Math.floor(b * (100 - percent) / 100));
+
+  // Reassemble
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+}
 function save({
   attributes
 }) {
@@ -193,11 +209,16 @@ function save({
     backgroundColor = '#fff9c4',
     textColor
   } = attributes;
+
+  // Automatically compute a darker border color
+  const borderColor = darken(backgroundColor, 10); // 10% darker
+
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
     style: {
       textAlign,
       backgroundColor,
-      color: textColor // apply text color on wrapper
+      color: textColor,
+      border: `1px solid ${borderColor}`
     }
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -207,7 +228,7 @@ function save({
       value: content,
       style: {
         color: textColor
-      } // reinforce it on the paragraph
+      }
     })
   });
 }

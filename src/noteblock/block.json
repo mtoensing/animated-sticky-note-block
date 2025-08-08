@@ -3,11 +3,11 @@
     "name": "create-block/noteblock",
     "title": "NoteBlock",
     "category": "widgets",
-	"icon": "sticky",
+    "icon": "sticky",
     "description": "Leave sticky notes directly on your website using a simple Gutenberg block.",
     "supports": {
         "html": false,
-        "align": true       
+        "align": true
     },
     "attributes": {
         "content": {
@@ -25,11 +25,14 @@
         },
         "backgroundColor": {
             "type": "string",
-            "default": "#fff9c4"   
-        },"textColor": { "type": "string" }
-	},
-		"textdomain": "noteblock",
-		"editorScript": "file:./index.js",
-		"editorStyle": "file:./index.css",
-		"style": "file:./style-index.css"
-	}
+            "default": "#fff9c4"
+        },
+        "textColor": {
+            "type": "string"
+        }
+    },
+    "textdomain": "noteblock",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}
