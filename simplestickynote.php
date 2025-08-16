@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Simple Sticky Note
+ * Plugin Name:       Simple Sticky Note Block
  * Description:       Leave sticky notes directly on your website using a simple Gutenberg block.
  * Version:           0.1.0
  * Requires at least: 6.7

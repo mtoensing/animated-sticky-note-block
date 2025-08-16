@@ -1,4 +1,4 @@
-=== Simple Sticky Note ===
+=== Simple Sticky Note Block ===
 Contributors:      MarcDK
 Tags:              block
 Tested up to:      6.8
