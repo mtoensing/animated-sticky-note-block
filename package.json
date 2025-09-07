@@ -1,5 +1,5 @@
 {
-	"name": "simplestickynote",
+	"name": "animated-sticky-note-block",
 	"version": "0.1.0",
 	"description": "Leave sticky notes directly on your website using a simple Gutenberg block. ",
 	"author": "MarcDK",
@@ -14,9 +14,10 @@
 		"lint-css:fix": "wp-scripts lint-style --fix",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start --blocks-manifest"
+		"start": "wp-scripts start --blocks-manifest",
+		"wp-int": "npm install @wordpress/scripts --save-dev --save-exact @wordpress/scripts"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.21.0"
+		"@wordpress/scripts": "30.23.0"
 	}
 }

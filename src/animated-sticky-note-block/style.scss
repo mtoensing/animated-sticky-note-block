@@ -1,4 +1,4 @@
-.wp-block-create-block-simplestickynote {
+.wp-block-create-block-animated-sticky-note-block {
 	border-radius: 4px;
 	box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.4);
 	font-family: inherit;
@@ -46,18 +46,18 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-	.wp-block-create-block-simplestickynote {
+	.wp-block-create-block-animated-sticky-note-block {
 		animation: none !important;
 		transform: rotate(-1.5deg) !important;
 	}
 }
 
-.wp-block-create-block-simplestickynote a {
+.wp-block-create-block-animated-sticky-note-block a {
 	color: inherit;
 }
 
 /* Adds the pin */
-.wp-block-create-block-simplestickynote::before {
+.wp-block-create-block-animated-sticky-note-block::before {
 	content: "";
 	position: absolute;
 	border-radius: 50%;
@@ -71,13 +71,13 @@
 }
 
 /* If the user chooses wide or full, remove the max-width */
-.wp-block-create-block-simplestickynote.alignwide,
-.wp-block-create-block-simplestickynote.alignfull {
+.wp-block-create-block-animated-sticky-note-block.alignwide,
+.wp-block-create-block-animated-sticky-note-block.alignfull {
 	max-width: none;
 }
 
 
-.wp-block-create-block-simplestickynote:hover {
+.wp-block-create-block-animated-sticky-note-block:hover {
 	transform: rotate(-1.5deg);
 	animation: none;
 

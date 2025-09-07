@@ -1,9 +1,9 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
-	'simplestickynote' => array(
+	'animated-sticky-note-block' => array(
 		'apiVersion' => 2,
-		'name' => 'create-block/simplestickynote',
+		'name' => 'create-block/animated-sticky-note-block',
 		'title' => 'Animated Sticky Note Block',
 		'category' => 'widgets',
 		'icon' => 'sticky',
@@ -41,7 +41,7 @@ return array(
 				'default' => '300px'
 			)
 		),
-		'textdomain' => 'simplestickynote',
+		'textdomain' => 'animatedstickynoteblock',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css'
