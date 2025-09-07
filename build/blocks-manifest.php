@@ -4,10 +4,10 @@ return array(
 	'simplestickynote' => array(
 		'apiVersion' => 2,
 		'name' => 'create-block/simplestickynote',
-		'title' => 'Simple Sticky Note',
+		'title' => 'Animated Sticky Note Block',
 		'category' => 'widgets',
 		'icon' => 'sticky',
-		'description' => 'Leave sticky notes directly on your website using a simple Gutenberg block.',
+		'description' => 'Leave animated sticky notes directly on your website using a simple Gutenberg block.',
 		'supports' => array(
 			'html' => false,
 			'align' => true,
