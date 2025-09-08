@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Animated Sticky Note Block
  * Description:       Leave animated sticky notes directly on your website using a simple Gutenberg block.
- * Version:           1.0.0
+ * Version:           1.4.0
  * Requires at least: 6.7
  * Requires PHP:      7.4
  * Author:            Marc Tönsing
