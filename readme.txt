@@ -3,7 +3,7 @@ Contributors:      MarcDK
 Tags:              block
 Tested up to:      6.8
 Donate link:       https://marc.tv/out/donate
-Stable tag:        1.4.0
+Stable tag:        1.5.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,7 @@ Leave sticky notes directly on your website using a simple Gutenberg block.
 - Subtil animation to gain attention
 - Fast performance
 - Zero impact on page load times
+- Developed on [GitHub](https://github.com/mtoensing/animated-sticky-note-block). PRs are welcome.
 
 == Installation ==
 
@@ -31,5 +32,5 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
-= 0.1.0 =
-* Release
+= 1.5.0 =
+* Initial Release
