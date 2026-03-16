@@ -1,6 +1,6 @@
 {
 	"name": "animated-sticky-note-block",
-	"version": "1.4.0",
+	"version": "1.7.0",
 	"description": "Leave sticky notes directly on your website using a simple Gutenberg block. ",
 	"author": "MarcDK",
 	"license": "GPL-2.0-or-later",
@@ -18,6 +18,6 @@
 		"wp-int": "npm install @wordpress/scripts --save-dev --save-exact @wordpress/scripts"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "30.23.0"
+		"@wordpress/scripts": "31.6.0"
 	}
 }
