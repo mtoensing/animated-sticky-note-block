@@ -1,7 +1,7 @@
 === Animated Sticky Note Block ===
 Contributors:      MarcDK
 Tags:              block
-Tested up to:      6.9
+Tested up to:      7.0
 Donate link:       https://marc.tv/out/donate
 Stable tag:        1.7
 License:           GPL-2.0-or-later
