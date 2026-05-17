@@ -3,7 +3,7 @@ Contributors:      MarcDK
 Tags:              block
 Tested up to:      7.0
 Donate link:       https://marc.tv/out/donate
-Stable tag:        1.7
+Stable tag:        1.7.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,9 @@ This section describes how to install the plugin and get it working.
 1. Animated Sticky Note Block in the frontend.
 
 == Changelog ==
+= 1.7.1 =
+* Prepared release for WordPress 7.0 compatibility.
+
 
 = 1.7 =
 * Bumped plugin version for the next release.
